@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "playwright": "^1.51.1",
+    "properties-reader": "^2.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.13.5"
+  },
+  "scripts": {}
+}
