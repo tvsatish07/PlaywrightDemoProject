@@ -10,6 +10,7 @@ class LoginPage{
         this.people = page.locator(properties.get('people'))
         this.text = page.locator(properties.get('peopletext'));
         this.signIn = page.locator('a').getByText('Sign in');
+        this.headerSignIn = page.locator(properties.get('headerSignButton'));
         this.username = page.locator(properties.get('usernameTextBox'));
         this.password = page.locator(properties.get('passwordTextBox'));
         this.LoginButton = page.locator(properties.get('submitButton'));
@@ -24,18 +25,23 @@ class LoginPage{
 
     }
 
-    async loginTest(userName,wrngPassword,passWord){
+    async loginTestFail(userName,wrngPassword){
         if(this.people){
             await this.people.click();
             console.log("value is: "+this.text);
             expect(await this.text.textContent()).toContain("co-worker");
         }
-        await this.page.pause();
         await this.signIn.click();
         await this.username.fill(userName);
         await this.password.fill(wrngPassword);
         await this.LoginButton.click();
-        expect(await this.wrongpassword).toBeVisible();
+        expect(await this.wrongpassword).toBeVisible();     
+    }
+
+    async loginTestPass(userName,passWord){
+        
+        await this.headerSignIn.click();
+        await this.username.fill(userName);
         await this.password.fill(passWord);
         await this.LoginButton.click();
      

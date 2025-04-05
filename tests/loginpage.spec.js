@@ -37,6 +37,6 @@ test('@json Login with json', async({browser}) => {
     }
     await page.locator('a').getByText('Sign in').click();
     await page.getByRole('button', {name: 'Sign in'}).click();
-    await page.pause();
+    await page.keyboard.press();
     
 })

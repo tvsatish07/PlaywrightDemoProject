@@ -1,4 +1,6 @@
 const {test, expect} = require("@playwright/test");
+const {POManager} = require('../Pages/POManager');
+const testdata = require("../Utils/worlds.json");
 
 test('Home page with dotenv file', async({browser, baseURL}) => {
     const context = await browser.newContext();
@@ -23,4 +25,13 @@ test('Home page with dotenv file', async({browser, baseURL}) => {
 //   await page.pause();
 //     await page.close();
     
+})
+
+test('@job Search job', async({page}) =>{
+    const poManager = new POManager(page);
+    const login = poManager.getLoginPage();
+    const home = poManager.getHomePage();
+    await login.navigate();
+    await login.loginTestPass(testdata.username,testdata.password);
+    await home.searchJobs();
 })
