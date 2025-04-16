@@ -13,6 +13,7 @@ test.skip('Login page with properties file', async({browser}) => {
     await page.goto(baseURL);
     await page.setViewportSize({ width: 1920, height: 1080 });
     await page.pause();
+    await page.getByLabel('Username');
 
 })
 

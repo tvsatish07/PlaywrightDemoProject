@@ -3,6 +3,8 @@
     "password": "Bharat@1947",
     "wrngPassword": "Bharat@194",
     "baseURL": "https://www.linkedin.com/",
-    "skills": "Playwright"
+    "skills": "Playwright",
+    "advUsername": null,
+    "advEmail": null
 
 }
